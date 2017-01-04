@@ -1,0 +1,29 @@
+/*
+ * Print Stylesheet
+ * @see-also http://foundation.zurb.com/docs/components/visibility.html#print-visibility
+ *
+    ________________
+  _/_______________/|
+ /___________/___//||
+|===        |----| ||
+|           |   ô| ||
+|___________|   ô| ||
+| ||/.´---.||    | ||
+|-||/_____\||-.  | |´
+|_||=L==H==||_|__|/
+
+ */
+
+// http://stackoverflow.com/questions/1630819/google-chrome-printing-page-breaks
+table, .flex-video, iframe {
+	page-break-inside: avoid;
+}
+
+// http://stackoverflow.com/questions/25769562/zurb-foundation-print-styles-how-to-disable-urls-appearing-next-to-anchors-whe
+a[href]:after {
+    content: "";
+}
+
+.printables {
+	display:none;
+}

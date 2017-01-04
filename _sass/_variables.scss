@@ -1,0 +1,69 @@
+/**
+ * Colors
+ */
+$white: #FFFFFF;
+$black: #000000;
+$brown: #785432;
+$blue: #3699B7;
+$purple: #AE7FAF;
+$violet: $purple;
+$green: #35CB8B;
+$yellow: #F7BA30;
+$gold: $yellow;
+$orange: #EF6A3C;
+$navy: #303C68;
+$grey: #676767;
+$light-grey: #EFEFEF;
+
+$blue-alt: #167CA0;
+$blue-highlight: #A5E2F9;
+$orange-alt: #FD9338;
+$red-alt: #B54C50;
+$pink-alt: #C5628F;
+$grey-alt: #E4E4E4;
+
+/**
+ * Typography
+ */
+$serif-font: "abril-text",serif;
+$sans-serif-font: "proxima-nova",sans-serif;
+
+body {
+	color: $black;
+}
+
+article {
+	h1, h2, h3, h4, h5 {
+		font-family: $serif-font;
+		font-weight: normal;
+		color: $brown;
+	}
+	h6 {
+		font-family: $sans-serif-font;
+		color: $black;
+		font-size: inherit;
+		line-height: inherit;
+		margin: inherit;
+	}
+}
+
+// IMPORTED FROM MIAMI (Video Stuff)
+// breakpoints
+$mobile: 767px;  // mobile 767px and less
+$tablet: 1023px; // tablet 1025px {desctop - 1} and less
+$retina: 1.5;    // standart retina > 1.5x
+$retina-hd: 2.5; // hd retina > 2.5x
+
+// breakpoints mixin
+@mixin breakpoint($rule){
+  @if ($rule == $retina or $rule == $retina-hd){
+    @media only screen and ( min-resolution : #{$retina*96} ), ( -webkit-min-device-pixel-ratio : #{$retina} ){
+     @content;
+    }
+  }
+  @else{
+    @media only screen and (max-width: #{$rule}){
+     @content;
+    }
+  }
+}

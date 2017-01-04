@@ -1,0 +1,150 @@
+header {
+	&.hero {
+		position: relative;
+		nav {
+			width:100%;
+			padding:1rem;
+			position: absolute;
+			z-index:100;
+			left:0;
+			top:0;
+			background-color:rgba(174,127,175,0.6); // $purple semi-transparent (http://www.rgbtohex.net/hextorgb/)
+			label {
+				font-weight: bold;
+				display: block;
+				width:100%;
+				cursor:pointer;
+			}
+			ul {
+				margin:0;
+				li {
+					display: none;
+					list-style-type:none;
+					padding-left:0;
+				}
+			}
+
+			&.fixed {
+				position: fixed;
+				top: 64px;
+				// background-color:rgba(174,127,175,0.9); // increase opacity when fixed
+				li {
+					a {
+						font-weight: bold;
+					}
+				}
+			}
+
+		}
+	}
+}
+
+main {
+	article {
+
+		font-family: $sans-serif-font;
+
+		p {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		h1, h2 {
+			margin:0;
+			background-color: $blue;
+			color:$white;
+			text-align: center;
+			padding:1.2rem;
+			font-family: inherit;
+			font-size: 1.3rem;
+			font-weight: normal;;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			&.yellow {
+				color:$white;
+				background: $yellow;
+			}
+			&.gold {
+				color:$white;
+				background: $gold;
+			}
+			&.green {
+				color:$white;
+				background: $green;
+			}
+			&.blue {
+				color:$white;
+				background: $blue;
+			}
+			&.navy {
+				color:$white;
+				background: $navy;
+			}
+			&.brown {
+				color:$white;
+				background: $brown;
+			}
+			&.orange {
+				color:$white;
+				background: $orange;
+			}
+			&.purple {
+				color:$white;
+				background: $purple;
+			}
+			&.violet {
+				color:$white;
+				background: $violet;
+			}
+		}
+
+		hr {
+			border-width: 4px;
+			border-color: $grey;
+			&.section-break {
+				display: none;
+			}
+		}
+
+		table {
+			// Scroll extra-wide tables in mobile where necessary
+			display: block;
+			width: auto;
+			max-width: auto;
+			overflow: auto;
+		}
+
+		// Kaltura Video Styles
+		.kal-group {
+		    max-height: 250px;
+		    .videoWrapper {
+		        max-height: 250px;
+		        iframe, div, object {
+		            max-height: 250px;
+		        }
+		    }
+		    .controls {
+		    	display:none;
+		    }
+		}
+	}
+}
+
+
+#course-navigation  {
+	#support-chat-small {
+		text-align: right;
+		position:relative;
+		left:5px;
+		padding-top:10px;
+		line-height: 1em;
+		img {
+			display:inline-block;
+			width:14px;
+			height:14px;
+			margin-right:2px;
+			margin-top:-3px !important;
+		}
+	}
+}

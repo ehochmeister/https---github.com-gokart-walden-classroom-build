@@ -1,0 +1,19 @@
+---
+layout: page
+---
+
+<h3 class="hide-for-small-only">Courses</h3>
+
+<dl class="course-index">
+{% assign course_dt = false %}
+{% for document in site.documents %}
+{% assign course = site.data.courses[document.course] %}
+
+	{% if course.name != course_dt %}
+		<dt><strong>{{ course.name }}</strong></dt>
+		{% assign course_dt = course.name %}
+	{% endif %}
+
+	<dd><a href="{{ document.url }}">{{ document.title }}</a></dd>
+{% endfor %}
+</dl>

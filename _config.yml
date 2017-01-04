@@ -1,0 +1,34 @@
+# Site settings
+title: Laureate Classroom
+organization: Walden University
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site, e.g. http://yourdomain.com
+gtm_id: "GTM-WV2785" # Google Tag Manager ID
+support_chat_link: "https://student.chat.waldenu.edu/system/templates/chat/sst/chat.html?subActivity=Chat&entryPointId=1004&templateName=sst&languageCode=en&countryCode=US&ver=v11"
+
+# Build settings
+# http://www.jamesward.com/2014/09/24/jekyll-on-heroku
+gems: ['kramdown']
+markdown: kramdown
+include: ["_GLOBAL_","_MASTERS_"]
+exclude: ["README.md","Gemfile","Gemfile.lock","firebase.json","circle.yml","config.ru","vendor","Procfile","Rakefile","node_modules","bower.json","package.json","*.php","example-*"]
+timezone: America/Chicago
+encoding: utf-8
+
+sass:
+  load_paths: ['_sass', '_GLOBAL_/assets/vendor/foundation/scss']
+  sourcemap: true
+  style: nested # https://web-design-weekly.com/2014/06/15/different-sass-output-styles/
+
+collections:
+  courses:
+    output: true
+    # permalink: /courses/:path/ # optional structure to remove .html from paths
+
+# Defaults for Courses
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      layout: course

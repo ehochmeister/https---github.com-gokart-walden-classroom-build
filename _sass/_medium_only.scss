@@ -1,0 +1,11 @@
+main{
+	article {
+		table {
+			// Scroll extra-wide tables in tablet where necessary
+			display: block;
+			width: auto;
+			max-width: auto;
+			overflow: auto;
+		}
+	}
+}

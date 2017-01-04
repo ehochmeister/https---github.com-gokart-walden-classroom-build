@@ -1,0 +1,9 @@
+{
+  "firebase": "walden-staging",
+  "public": "_site",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

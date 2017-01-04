@@ -1,0 +1,16 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="{{"/assets/vendor/foundation/js/vendor/fastclick.js" | prepend: base }}"></script>
+<script src="{{"/assets/vendor/foundation/js/foundation.min.js" | prepend: base }}"></script>
+<script src="{{"/assets/js/main.js" | prepend: base }}"></script>
+<script src="{{"/assets/vendor/walden/js/app.js" | prepend: base }}"></script>
+
+<script>
+var intercomSettings = {
+  app_id: 'go0qsqk9',
+  email: 'john.doe@example.com', // Replace with email of current user
+  user_id: '9876', // Optional: Replace with a unique identifier that won't change
+  created_at: 1234567890, // Replace with Unix timestamp of signup date
+  name: 'John Doe' // Optional: Replace with real name if available
+};
+</script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/go0qsqk9';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>

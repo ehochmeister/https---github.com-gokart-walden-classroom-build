@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "bower": "^1.6.9",
+    "firebase-tools": "^2.2.1"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install --force --config.interactive=false"
+  }
+}

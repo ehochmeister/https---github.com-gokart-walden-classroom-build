@@ -1,0 +1,14 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name='date' content="{{ site.time }}">
+  {% if page.redirect %}<meta http-equiv="refresh" content="1;url={{ page.redirect }}">{% endif %}
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <script src="https://use.typekit.net/kth7cnb.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <script src="{{"/assets/vendor/foundation/js/vendor/modernizr.js" | prepend: base }}"></script>
+  <link rel="stylesheet" href="{{"/assets/css/main.css" | prepend: base }}">
+</head>

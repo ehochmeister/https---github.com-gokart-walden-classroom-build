@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body> 
+
+    <div class="row">
+    	<div class="medium-5 columns medium-centered">
+    		{% if page.redirect %}
+    		<p>
+    		  Redirecting to <a href="{{ page.redirect }}">{{ page.redirect }}</a>
+    		</p>
+    		{% endif %}
+    	</div>
+    </div>
+
+  </body>
+
+</html>

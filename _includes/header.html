@@ -1,0 +1,166 @@
+{% assign course = site.data.courses[page.course] %}
+
+<div data-magellan-expedition="fixed">
+  <div class="row small-uncollapse medium-uncollapse large-collapse" id="course-navigation">
+
+    <nav class="small-5 medium-3 columns large-text-center" id="logo-container">
+      <h1 class="show-for-small hide-for-print">
+         <a href="/">
+          <img src="{{"/assets/img/logo-walden-university-sm-white.png" | prepend: base }}" id="logo-sm" alt="{{ site.organization }}">
+         </a>
+      </h1>
+      <h3 class="hide-for-small">
+        <a href="/">
+          <img src="{{"/assets/img/logo-walden-university-white.png" | prepend: base }}" alt="{{ site.organization }}" id="logo" class="hide-for-print">
+          <span class="print-only">{{ site.organization }}</span>
+        </a>
+      </h3>
+    </nav>
+
+    <nav class="medium-8 large-6 columns hide-for-small">
+      <div class="row collapse">
+          <div class="medium-12 columns">
+            <a href="./" id="course-title">
+              {{ course.name }}
+            </a>
+          </div>
+      </div>
+      <div class="row collapse">
+          <div class="medium-12 columns">
+            {% if page.navigation %}
+              <ul class="inline-list hide-for-print week-navigation">
+              <li><label>{{ page.navigation.label }}</label></li>
+              {% for navigation in page.navigation.sections %}
+                <li>
+                  <a href="#{{ navigation.slug }}" data-magellan-arrival="{{ navigation.slug }}">
+                    {{ navigation.label }}
+                  </a>
+                </li>
+              {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+      </div>
+    </nav>
+
+    <nav class="small-5 columns show-for-small-only hide-for-print" id="support-chat-small">
+      <a href="{{ site.support_chat_link }}" target="_blank" id="student-support-header-small" class="right">
+          <small>Student Support Team<br></small>
+          <img src="{{"/assets/img/icon-support-chat-white.svg" | prepend: base }}" alt="Student Support"
+               style="">
+           Start Chat
+
+      </a>
+    </nav>
+
+    <nav class="large-2 columns show-for-large-up hide-for-print" id="support-chat">
+      <a href="{{ site.support_chat_link }}" target="_blank" id="student-support-header">
+        <img src="{{"/assets/img/icon-support-chat.svg" | prepend: base }}" alt="Student Support">
+        <span class="header">Student Support Team</span>
+        <span style="" class="btn">Start Chat</span>
+      </a>
+    </nav>
+
+    <nav class="small-2 medium-1 small-text-center columns hide-for-print">
+        <a href="#menu" role="button" class="right-off-canvas-toggle">☰ <span>Menu</span></a>
+    </nav>
+
+  </div>
+
+</div>
+
+<nav class="right-off-canvas-menu" id="menu">
+
+  <ul class="side-nav header text-right menu-exit">
+     <li>
+       <span class="right-off-canvas-toggle">×</span>
+     </li>
+  </ul>
+
+  <ul class="side-nav header">
+     <li>
+       <a href="./">
+         {{ course.name }}
+       </a>
+     </li>
+  </ul>
+
+  <ul class="side-nav primary">
+
+    <li>
+      <a href="/" class="back-to-class-home">
+        Back to Blackboard
+      </a>
+    </li>
+
+    <li>
+      <a href="https://wa.elearning.laureate.net/webapps/blackboard/execute/content/blankPage?cmd=view&content_id=_27470151_1&course_id=_9954964_1&mode=reset">Student Support</a>
+    </li>
+
+    <li id="student-support-sidebar">
+      <a href="{{ site.support_chat_link }}" target="_blank">
+        <small>
+          <img src="{{"/assets/img/icon-support-chat-white.svg" | prepend: base }}" alt="Student Support"
+               style="display:inline-block;width:14px;height:14px;margin-right:3px;margin-top:-4px !important;">
+          Student Support Chat
+        </small>
+      </a>
+    </li>
+
+    {% for item in course.primary_navigation %}
+     <li>
+       <a href="./{{ item.slug }}.html{{ item.section | prepend: '#' }}">
+         {{ item.label }}
+       </a>
+     </li>
+    {% endfor %}
+  </ul>
+
+  <ul class="side-nav secondary">
+   {% for item in course.navigation %}
+     <li>
+       <a href="./{{ item.slug }}.html{{ item.section | prepend: '#' }}">
+         {{ item.label }}
+       </a>
+     </li>
+   {% endfor %}
+  </ul>
+
+  <ul class="side-nav tertiary">
+     <li>
+      <a href="/">
+        Back to Blackboard
+      </a>
+     </li>
+     <li>
+       <a href="/help">
+         Help
+       </a>
+     </li>
+  </ul>
+
+</nav>
+
+{% if page.hero %}
+<header class="hero hide-for-print">
+
+  <img src="{{ page.hero }}">
+
+  {% if page.navigation %}
+  <nav class="show-for-small fixed">
+      <em>Currently Reading</em><br />
+      <label>{{ course.name }} | {{ page.navigation.label }} ▾</label>
+      <ul class="hide-for-print week-navigation">
+      {% for navigation in page.navigation.sections %}
+        <li>
+          <a href="#{{ navigation.slug }}">
+            {{ navigation.label }}
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+  </nav>
+  {% endif %}
+
+</header>
+{% endif %}

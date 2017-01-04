@@ -1,0 +1,284 @@
+body {
+	background-color:$light-grey;
+
+}
+
+header {
+	&.hero {
+		text-align:center;
+		margin-bottom: -12rem;
+	}
+	&.main {
+		.right-off-canvas-toggle {
+			display: block;
+			padding-right:1rem;
+		}
+
+	}
+	.fixed {
+		background: $black;
+		min-width: 40.0625em;
+		width:100%;
+		z-index:99;
+	}
+}
+
+#course-navigation {
+
+	padding-top:1rem;
+
+	nav.columns {
+		padding-right:0;
+	}
+
+	#course-title {
+		font-size: 0.5rem;
+		text-transform: uppercase;
+	}
+
+	ul.week-navigation {
+		li {
+			font-size: 0.8rem;
+			color: $grey-alt;
+			line-height: 1.3rem;
+			a {
+				color:inherit;
+				display: inline-block;
+				border-bottom: 2px solid transparent;
+				&:hover, &.active {
+					color:white;
+					text-decoration:none;
+					line-height: inherit;
+					border-bottom-color: $blue-highlight;
+				}
+			}
+			label {
+				font-weight: bold;
+				a {
+					font-weight: inherit;
+				}
+			}
+
+			// Hide the first in-page pagination link
+			// This is because it is nearly always the same as the page title
+			// &:nth-child(2) {
+			// 	a {
+			// 		display: none;
+			// 	}
+			// }
+		}
+	}
+}
+
+main {
+
+	article {
+
+		padding:1.5rem 0;
+
+		h1:first-of-type {
+			text-align: center;
+		}
+
+		blockquote {
+
+			border:none;
+
+			p {
+				padding-left: 1rem;
+				border-left: 0.75rem solid $blue;
+			}
+
+			&.cta {
+				p {
+					border-left:none;
+					padding-left: 4rem;
+			     	padding-right: 4rem;
+				}
+			}
+
+			&.intro {
+				background:none;
+				border:none;
+				font-family: $serif-font;
+				font-size: 1.3rem;
+				text-align: center;
+				color: $grey;
+
+
+				p {
+					font-family: inherit;
+					font-size: inherit;
+					border:none;
+					padding-left: 4rem;
+			     	padding-right: 4rem;
+
+
+					&:last-of-type {
+						// http://stackoverflow.com/questions/8572952/border-length-smaller-than-div-width
+						position: relative;
+						margin-bottom: 3rem;
+						z-index : 1;
+						&:after {
+						    content : "";
+						    position: absolute;
+						    left    : 40%;
+						    bottom  : -2rem;
+						    height  : 1px;
+						    width   : 20%;  /* or 100px */
+						    border-bottom: 3px solid $blue;
+						}
+					}
+
+				}
+			}
+		}
+
+		table {
+			padding:1rem;
+		}
+
+		hr {
+			&.section-break {
+				border:none;
+				display:block;
+				background:$navy;
+				min-height:20rem;
+				min-width: 160%;
+				margin-left:-30%;
+				margin-bottom:-17rem;
+				margin-top:0;
+
+				&.yellow {
+					background: $yellow;
+				}
+				&.gold {
+					background: $gold;
+				}
+				&.green {
+					background: $green;
+				}
+				&.blue {
+					background: $blue;
+				}
+				&.navy {
+					background: $navy;
+				}
+				&.brown {
+					background: $brown;
+				}
+				&.orange {
+					background: $orange;
+				}
+				&.purple {
+					background: $purple;
+				}
+				&.violet {
+					background: $violet;
+				}
+			}
+
+			&.tiny {
+				margin:0;
+				border:none;
+				display:block;
+				height:0;
+				background:$white;
+
+				// http://stackoverflow.com/questions/8572952/border-length-smaller-than-div-width
+				position: relative;
+				z-index : 1;
+				  &:before {
+				    content : "";
+				    position: absolute;
+				    left    : 40%;
+				    bottom  : 0;
+				    height  : 1px;
+				    width   : 20%;  /* or 100px */
+				    border-bottom: 3px solid $blue;
+				  }
+
+			}
+
+
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 2.2rem;
+			padding-top:4rem;
+			padding-bottom: 2.5rem;
+		}
+
+		h2 {
+			font-size: 1.8rem;
+			padding-top: 1.5rem;
+			padding-bottom: 1.2rem;
+		}
+
+
+		.flex-video {
+			margin-top:0;
+			margin-bottom: 0;
+
+			// faux padding using border
+			// because flex-video relies on sneaky padding tricks for its own flexing
+			border-left:3rem solid $white;
+			border-right:3rem solid $white;
+		}
+
+		p, blockquote, h1, h2, h3, h4, h5, h6, ul, ol, .flex-video + p {
+			display: block;
+			width:100%;
+			background: $white;
+			margin:0;
+			padding-left:4rem;
+			padding-right:4rem;
+		}
+
+		h3, h4, p {
+			padding-bottom:.7rem;
+			padding-top:.7rem;
+		}
+
+		h6 {
+			padding-top:1rem;
+			padding-bottom: 1rem;
+		}
+
+		ul {
+			padding-top:1rem;
+			padding-top:0;
+			padding-left:4.7rem;
+			padding-bottom:1rem;
+		}
+
+		blockquote {
+			margin:0 !important;
+			&.cta {
+				padding-left: 4rem;
+			    padding-right: 4rem;
+				border:0.5rem solid $white;
+				border-width: 0.3rem 4rem; // faux white-space around ctas
+				box-sizing: border-box;
+				p {
+					padding-left:1rem;
+				}
+				&.back {
+					p {
+						// any special styles for ctas with back buttons
+					}
+				}
+			}
+			&.intro {
+				background: white;
+				padding-left:4rem;
+				padding-right:4rem;
+			}
+		}
+
+		.padding {
+			min-height: 3rem;
+		}
+	}
+}

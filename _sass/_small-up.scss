@@ -1,0 +1,586 @@
+body {
+    background: $white;
+    font-family: $sans-serif-font;
+    margin-bottom:3em;
+    // Temp disabled until fixed navigation is improved
+    // padding-top:5em;
+}
+
+header {
+	&.main {
+
+		background: $black;
+        color: $white;
+
+        // Temp disabled until fixed navigation is improved
+        // position: fixed;
+        // top: 0;
+        // left: 0;
+        // width: 100%;
+        // z-index: 99;
+
+        a {
+            color: $white;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        h1 {
+            a {
+                font-family: $serif-font;
+            }
+        }
+
+        #menu {
+
+            $menu-background: #3793B0;
+            $menu-header-background: #1E7A98; // tiny bit darker
+
+            background: $menu-background;
+            .side-nav {
+
+                background: $menu-background;
+
+                &.header {
+                    background: $menu-header-background;
+                }
+
+                &.secondary {
+                    border-bottom: 2px solid #63AABE;
+                }
+
+                &.primary, &.secondary, &.tertiary {
+                    padding-top:0;
+                    padding-bottom:0;
+                    margin:1rem;
+                    li {
+                        a {
+                            padding-left:0;
+                            &.divider {
+                                border-top: 2px solid #63AABE;
+                                margin-top: 1em;
+                                padding-top: 1.5em;
+                            }
+                        }
+                        &:last-child {
+                            margin-bottom: 0.9rem;
+                        }
+                    }
+                }
+
+                &.menu-exit {
+                    background: $black;
+                    margin-bottom: -1.3em;
+                    padding:0 0 0.7em 0;
+                    li {
+                        span {
+                            color: $white;
+                            margin: 0 0.75em 0 0;
+                            cursor: pointer;
+                            font-size: 2rem;
+                            &:hover {
+                                color: $purple;
+                            }
+                        }
+                    }
+                }
+
+                li {
+                    a {
+                        color: $white !important;
+                        font-weight: bold;
+                        &.back-to-class-home {
+                            display: block;
+                            border: 3px solid $white;
+                            text-align: center;
+                            padding:0.5em 1em;
+                            font-weight: normal;
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    &#student-support-sidebar {
+                        a {
+                            margin-top:-1.5em !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right-off-canvas-toggle {
+            text-decoration: none !important;
+            display: inline-block;
+            font-size: 2rem;
+            padding:0.5rem;
+            line-height: 0.9em;
+            span {
+                text-transform: capitalize;
+                font-family: $sans-serif-font;
+                font-weight: normal;
+                font-size:0.35em;
+                display:block;
+                line-height: 1.5em;
+            }
+        }
+
+	}
+
+    .fixed {
+        background: $black;
+        min-width: 100%;
+        z-index:99;
+    }
+
+}
+
+body.default {
+    header {
+        .right-off-canvas-toggle {
+            display: none;
+        }
+    }
+}
+
+main {
+
+    article {
+
+        background: $white;
+
+        ::selection {
+            color: $white;
+            background: $purple; // WebKit/Blink Browsers
+        }
+
+        ::-moz-selection {
+            color: $white;
+            background: $purple; // Gecko Browsers
+        }
+
+        padding-bottom:1rem;
+
+        a {
+            color:inherit;
+            border-bottom: 5px solid $blue-highlight;
+            // display: inline-block;
+            // padding-bottom:0;
+            // line-height: 1rem;
+            // white-space: pre-wrap;
+
+            &.has-image {
+                border-bottom: none;
+                display: inline;
+                line-height: 1rem;
+            }
+
+            &:hover {
+                text-decoration: none;
+                background-color: $blue-highlight;
+                color:inherit;
+                line-height: 1rem;
+            }
+            &:active, &:focus, &:visited {
+                color:inherit;
+            }
+
+            &.cluetipLink {
+                &:focus, &:visited, &:active {
+                    color: $purple;
+                    border-color: $purple;
+                }
+            }
+
+        }
+
+        p, ul, h1, h2, h3, h4, h5, h6 {
+            background: $white;
+            position: relative;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin-bottom: 0;
+            padding: 1rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            padding:0;
+        }
+
+        h6 {
+            font-weight: bold;
+            margin-top:0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        blockquote {
+
+            font-family: inherit;
+            font-size: inherit;
+            color: $grey;
+
+            border-color: $blue;
+            border-width: 1rem;
+            padding-left: 0;
+            margin-left: 1rem;
+            margin-bottom: 0;
+
+            p {
+                font-family: inherit;
+                font-size: inherit;
+                color: inherit;
+                background-color:transparent;
+                padding-top:0;
+                padding-bottom:0;
+            }
+
+            &.intro {
+                background-color: #F4F4F4;
+                border:none;
+                padding:1rem 0;
+                margin-left:0;
+                p {
+                    margin: 0 0 1rem 0;
+                }
+            }
+
+            &.note {
+                background-color:$white;
+                padding-left:4rem;
+                padding-right:4rem;
+                p {
+                    padding: 0.5rem 1rem;
+                    background-color: #F8F8F8; // slightly lighter grey
+                    border:none;
+                    font-size: 0.9rem;
+                    font-style: italic;
+                }
+            }
+
+            &.cta {
+                transition: background-color 0.3s ease;
+                background-color: #F4F4F4;
+                background-image:url(../img/icon-link.svg);
+                background-repeat: no-repeat;
+                background-position: 10px center;
+                background-size: 50px 50px;
+                padding: 10px 10px 10px 55px;
+                margin: 1rem 0;
+                border:none;
+                min-height: 100px;
+
+                &.back {
+                    background-image:url(../img/icon-link.svg), url(../img/icon-bar-link.svg);
+                    background-position: 10px center, right -10px center;
+                    background-size: 50px 50px, 70px 100%;
+                    p {
+                        max-width: 90%
+                    }
+                }
+
+                &.quiz {
+                    background-image:url(../img/icon-quiz.svg);
+                    &.back {
+                        background-image:url(../img/icon-quiz.svg), url(../img/icon-bar-link.svg);
+                    }
+                }
+                &.assignment {
+                    background-image:url(../img/icon-assignment.svg);
+                    &.back {
+                        background-image:url(../img/icon-assignment.svg), url(../img/icon-bar-link.svg);
+                    }
+                }
+                &.discussion {
+                    background-image:url(../img/icon-discussion.svg);
+                    &.back {
+                        background-image:url(../img/icon-discussion.svg), url(../img/icon-bar-link.svg);
+                    }
+                }
+                &.reading {
+                    background-image:url(../img/icon-reading.svg);
+                    &.back {
+                        background-image:url(../img/icon-reading.svg), url(../img/icon-bar-link.svg);
+                    }
+                }
+                &.video {
+                    background-image:url(../img/icon-video.svg);
+                    &.back {
+                        background-image:url(../img/icon-video.svg), url(../img/icon-bar-link.svg);
+                    }
+                }
+
+                &.back {
+                    @media #{$small-only} {
+                        background-image:url(../img/icon-link.svg);
+                    }
+                }
+
+                &.kaltura {
+                    padding-left:5rem;
+                    .kal-group {
+                        & + p {
+                            padding-left:0;
+                        }
+                    }
+                }
+
+                &.no-icon {
+                    background-image:none;
+                    padding-left:1rem;
+                    transition:none;
+                    &:hover {
+                        background-color: #F4F4F4;
+                    }
+                }
+
+
+                &.clickable {
+                    &:hover {
+                        cursor:pointer;
+                        background-color:$blue;
+                        p, a {
+                            color: $white;
+                        }
+                    }
+                }
+                a {
+                    border:none;
+                }
+                p {
+                    padding-top:0;
+                    padding-bottom:0;
+                    padding-right:0;
+
+                    /*
+                     * Handle/break long text in Calls to Action
+                     * https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+                     * http://stackoverflow.com/questions/4282757/how-to-make-word-break-on-firefox-using-css
+                     */
+
+                      // Add a hyphen where the word breaks, if supported
+                      -ms-hyphens: auto;
+                      -moz-hyphens: auto;
+                      -webkit-hyphens: auto;
+                      hyphens: auto;
+
+                      // Make things break in various browsers
+                      white-space: pre-wrap; /* css-3 */
+                      white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+                      white-space: -pre-wrap; /* Opera 4-6 */
+                      white-space: -o-pre-wrap; /* Opera 7 */
+                      word-wrap: break-word; /* Internet Explorer 5.5+ */
+
+                    a {
+                        border:inherit;
+                        color:$blue;
+                        &:hover {
+                            background:none;
+                        }
+                    }
+                    strong {
+                        a {
+                            color: inherit;
+                        }
+                    }
+                }
+                ul {
+                    background:transparent;
+                    padding-left:1.75rem;
+                }
+            }
+        }
+
+        blockquote.cta + blockquote.note {
+            padding-top:0;
+        }
+
+        div.cta {
+            max-width: 90%;
+            width:90%;
+            &.panel {
+                background-color: #F4F4F4;
+                border:none;
+            }
+
+        }
+
+        p.hero {
+            padding:0;
+        }
+
+        iframe {
+            border:1px solid #eee;
+        }
+
+        .flex-video {
+            margin-top:1em;
+            iframe {
+                border:0;
+                border-bottom:0.5em solid $yellow;
+            }
+        }
+
+        // The Citation Following a Youtube Video
+        .flex-video + p {
+            font-size: small;
+            padding:2rem;
+            margin:1rem;
+            a {
+                color:inherit;
+                display: inline;
+                line-height: inherit;
+                border:none;
+                &:hover {
+                    background:none;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        ul {
+            padding-top:0;
+            padding-bottom:0;
+            margin-bottom: 1rem;
+
+            /* Round, colored bullet */
+            li {
+              list-style: none;
+              padding-left:0.8rem;
+            }
+
+            li:before {
+              content: '\2022';
+              display: block;
+              position: relative;
+              max-width: 0;
+              max-height: 0;
+              left: -1.3rem;
+              top: 0;
+              color: $blue;
+            }
+        }
+
+        ol {
+            li {
+                margin-left: 1.5rem;
+                p {
+                    padding-left:0;
+                }
+                ul {
+                    margin-left:0;
+                }
+            }
+        }
+
+        dl {
+            &.course-index {
+                padding: 0 4rem;
+                @media #{$small-only} {
+                   padding: 0;
+                }
+                dt {
+                    margin-top:1em;
+                    font-size: 1.5rem;
+                }
+                dd {
+                    margin:0.2em 0;
+                    a {
+                        border-width:1px;
+                    }
+                }
+            }
+        }
+
+        div.highlighter-rouge {
+            padding: 0 4rem;
+            background-color: $white;
+            overflow-x: scroll;
+            pre {
+                background-color: $white;
+            }
+        }
+
+        table {
+
+            border-collapse: collapse;
+            border: none;
+            background-color:$white;
+            width:86%;
+            margin:0 auto 1rem auto;
+
+            // width:86%;
+            // position: relative;
+            // left:7%;
+
+            // Scroll extra-wide tables in mobile where necessary
+            // display: block;
+            // width: auto;
+            // max-width: auto;
+            // overflow: auto;
+
+            tr {
+                th, td {
+                    border:1px solid $blue;
+                    padding:1em;
+                }
+            }
+
+            thead {
+                tr {
+                    th {
+                        background-color: $blue;
+                        color: $white;
+                        font-weight: normal;
+                        // white-space: nowrap;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        &:nth-child(1) {
+                            font-weight: bold;
+                            // text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Kaltura Video Styles
+        .kal-group {
+
+            display:block;
+            width:100%;
+            margin: 0 !important;
+
+            .videoWrapper {
+                display:block;
+                width:100%;
+                margin: 0 !important;
+                iframe, div, object {
+                    display: block;
+                    width:100% !important;
+                    margin: 0 !important;
+                }
+            }
+
+            .controls {
+                margin: 0 !important;
+                padding-left:0;
+                button, select {
+                    font-family: $sans-serif-font !important;
+                    font-size: 1rem !important;
+                    display: inline-block !important;
+                    max-width: 12em !important;
+                    // margin:0 1em 0 0 !important;
+                }
+            }
+        }
+    }
+}
+
+// Disable Zurb Foundation Offcanvas Shadow
+// http://foundation.zurb.com/forum/posts/13367-removing-inner-shadow-off-canvas-menu
+.move-right .exit-off-canvas, .move-left .exit-off-canvas { box-shadow:none; }
